@@ -44,12 +44,6 @@ La aplicación incluye datos mock realistas:
 
 ## Tecnologías
 
-- React 18 + TypeScript
-- React Router (Data mode)
-- Tailwind CSS v4
-- Motion (Framer Motion fork)
-- Recharts para visualizaciones
-- Radix UI para componentes accesibles
 
 ## Navegación
 
