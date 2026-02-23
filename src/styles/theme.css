@@ -1,0 +1,257 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Stratova Design Tokens - Light Mode */
+  --font-size: 16px;
+  
+  /* Base colors - Light */
+  --bg: #F7F8FA;
+  --surface: #FFFFFF;
+  --glass: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(16, 24, 40, 0.10);
+  --text-primary: #0B0F17;
+  --text-secondary: rgba(11, 15, 23, 0.62);
+  --text-tertiary: rgba(11, 15, 23, 0.40);
+  
+  /* Accent colors */
+  --accent: #1D4ED8;
+  --accent-soft: rgba(29, 78, 216, 0.12);
+  --accent-hover: #1e40af;
+  
+  /* Status colors */
+  --success: #0E9F6E;
+  --success-soft: rgba(14, 159, 110, 0.12);
+  --warning: #B45309;
+  --warning-soft: rgba(180, 83, 9, 0.12);
+  --danger: #B42318;
+  --danger-soft: rgba(180, 35, 24, 0.12);
+  
+  /* Shadows - Light */
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --shadow-md: 0 8px 24px rgba(16, 24, 40, 0.10);
+  --shadow-lg: 0 16px 48px rgba(16, 24, 40, 0.12);
+  
+  /* Radius */
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 18px;
+  --r-pill: 999px;
+  
+  /* Spacing (8pt grid) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  
+  /* Legacy variables for compatibility */
+  --background: var(--bg);
+  --foreground: var(--text-primary);
+  --card: var(--surface);
+  --card-foreground: var(--text-primary);
+  --popover: var(--surface);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--accent);
+  --primary-foreground: #FFFFFF;
+  --secondary: var(--glass);
+  --secondary-foreground: var(--text-primary);
+  --muted: rgba(11, 15, 23, 0.08);
+  --muted-foreground: var(--text-secondary);
+  --accent-legacy: var(--accent-soft);
+  --accent-foreground: var(--text-primary);
+  --destructive: var(--danger);
+  --destructive-foreground: #FFFFFF;
+  --border: var(--glass-border);
+  --input: transparent;
+  --input-background: var(--surface);
+  --switch-background: rgba(11, 15, 23, 0.15);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: var(--accent);
+  --chart-1: #1D4ED8;
+  --chart-2: #0E9F6E;
+  --chart-3: #B45309;
+  --chart-4: #B42318;
+  --chart-5: #7C3AED;
+  --radius: var(--r-md);
+  --sidebar: var(--surface);
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-primary: var(--accent);
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: var(--accent-soft);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--glass-border);
+  --sidebar-ring: var(--accent);
+}
+
+.dark {
+  /* Stratova Design Tokens - Dark Mode */
+  --bg: #0B0F14;
+  --surface: #0F1520;
+  --glass: rgba(15, 21, 32, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.10);
+  --text-primary: rgba(255, 255, 255, 0.92);
+  --text-secondary: rgba(255, 255, 255, 0.64);
+  --text-tertiary: rgba(255, 255, 255, 0.42);
+  
+  --accent: #3B82F6;
+  --accent-soft: rgba(59, 130, 246, 0.18);
+  --accent-hover: #60a5fa;
+  
+  --success: #0E9F6E;
+  --success-soft: rgba(14, 159, 110, 0.18);
+  --warning: #B45309;
+  --warning-soft: rgba(180, 83, 9, 0.18);
+  --danger: #B42318;
+  --danger-soft: rgba(180, 35, 24, 0.18);
+  
+  /* Shadows - Dark */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.30);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.55);
+  
+  /* Legacy variables for dark mode */
+  --background: var(--bg);
+  --foreground: var(--text-primary);
+  --card: var(--surface);
+  --card-foreground: var(--text-primary);
+  --popover: var(--surface);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--accent);
+  --primary-foreground: #0B0F14;
+  --secondary: var(--glass);
+  --secondary-foreground: var(--text-primary);
+  --muted: rgba(255, 255, 255, 0.08);
+  --muted-foreground: var(--text-secondary);
+  --accent-legacy: var(--accent-soft);
+  --accent-foreground: var(--text-primary);
+  --destructive: var(--danger);
+  --destructive-foreground: #FFFFFF;
+  --border: var(--glass-border);
+  --input: var(--glass-border);
+  --input-background: var(--surface);
+  --switch-background: rgba(255, 255, 255, 0.15);
+  --ring: var(--accent);
+  --chart-1: #3B82F6;
+  --chart-2: #0E9F6E;
+  --chart-3: #B45309;
+  --chart-4: #B42318;
+  --chart-5: #8B5CF6;
+  --sidebar: var(--surface);
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-primary: var(--accent);
+  --sidebar-primary-foreground: #0B0F14;
+  --sidebar-accent: var(--accent-soft);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--glass-border);
+  --sidebar-ring: var(--accent);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(29, 78, 216, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(14, 159, 110, 0.02) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
