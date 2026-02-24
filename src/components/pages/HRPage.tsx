@@ -27,7 +27,7 @@ const initialNodes = [
   { id: '5', position: { x: 550, y: 250 }, data: { label: 'Planta y Logística' }, style: { background: 'var(--glass)', color: 'var(--text-secondary)', border: '1px dashed var(--glass-border)', borderRadius: '8px', padding: '10px 20px' } },
 ];
 
-const initialEdges = [
+const initialEdges: Edge[] = [
   { id: 'e1-2', source: '1', target: '2', animated: true, style: { stroke: 'var(--accent)' } },
   { id: 'e1-3', source: '1', target: '3', animated: true, style: { stroke: 'var(--accent)' } },
   { id: 'e1-4', source: '1', target: '4', animated: true, style: { stroke: 'var(--accent)' } },
@@ -47,7 +47,7 @@ export default function HRPage() {
   const [hiringCount, setHiringCount] = useState(0);
 
   const onConnect = useCallback(
-    (params: Edge | Connection) => setEdges((eds) => addEdge({ ...params, animated: true, style: { stroke: 'var(--accent)' } }, eds)),
+    (params: Edge | Connection) => setEdges((eds) => addEdge({ ...params, animated: true, style: { stroke: 'var(--accent)' } } as Edge, eds)),
     [setEdges],
   );
 
