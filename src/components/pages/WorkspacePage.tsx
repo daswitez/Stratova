@@ -2,8 +2,8 @@
 
 import { motion } from "motion/react";
 import { GlassCard, KPIStatCard, AlertRibbon } from "@/components/GlassComponents";
-import { kpiData, alerts, teamData, decisionModules } from "@/data/mockData";
-import { ArrowRight, CheckCircle, Clock, AlertCircle } from "lucide-react";
+import { kpiData, alerts, teamData, decisionModules, currentCycle } from "@/data/mockData";
+import { ArrowRight, CheckCircle, Clock, AlertCircle, Trophy, TrendingUp, Activity } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
@@ -19,12 +19,88 @@ export default function WorkspacePage() {
         animate={{ opacity: 1, y: 0 }}
         className="space-y-2"
       >
-        <h1 className="text-[32px] font-semibold text-[var(--text-primary)]">
+        <h1 className="text-[32px] font-semibold text-[var(--text-primary)] tracking-tight">
           Workspace Ejecutivo
         </h1>
         <p className="text-[14px] text-[var(--text-secondary)]">
           Panel de control y métricas clave para {teamData.name}
         </p>
+      </motion.div>
+
+      {/* Giant Countdown Banner */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.98, y: 10 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <div className="relative overflow-hidden rounded-[24px] border border-[var(--glass-border)] bg-gradient-to-br from-[var(--glass)] to-[var(--accent-soft)] backdrop-blur-2xl p-8 shadow-[var(--shadow-lg)] group">
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--accent)] rounded-full blur-[120px] opacity-10 translate-x-1/2 -translate-y-1/2 group-hover:opacity-20 transition-opacity duration-700" />
+          
+          <div className="relative flex items-center justify-between">
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="px-3 py-1 rounded-full bg-[var(--accent)] text-white text-[12px] font-medium tracking-wide">
+                  {currentCycle.name.toUpperCase()}
+                </span>
+                <span className="flex items-center gap-2 text-[14px] font-medium text-[var(--text-secondary)]">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--success)] opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--success)]"></span>
+                  </span>
+                  Recibiendo decisiones
+                </span>
+              </div>
+              
+              <h2 className="text-[48px] md:text-[56px] font-bold text-[var(--text-primary)] leading-[1.1] tracking-tight">
+                Cierre en <span className="font-['JetBrains_Mono'] text-[var(--accent)]">{currentCycle.timeRemaining}</span>
+              </h2>
+              
+              <p className="text-[15px] text-[var(--text-secondary)] max-w-xl leading-relaxed">
+                El motor de simulación procesará las estrategias al finalizar. Actualmente tu equipo ha completado <span className="font-medium text-[var(--text-primary)]">{completedModules} de {totalModules}</span> módulos obligatorios.
+              </p>
+            </div>
+            
+            {/* Quick Summary of last round */}
+            <div className="w-[340px] bg-white/40 dark:bg-black/20 rounded-[16px] p-5 border border-white/20 dark:border-white/5 backdrop-blur-md shadow-sm">
+              <h3 className="text-[13px] font-medium text-[var(--text-secondary)] uppercase tracking-wider mb-4 flex items-center gap-2">
+                <Activity className="w-4 h-4 text-[var(--accent)]" />
+                Resumen Ciclo Anterior
+              </h3>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center group/kpi">
+                  <div className="flex items-center gap-2">
+                    <div className="w-6 h-6 rounded bg-[var(--success-soft)] flex items-center justify-center">
+                      <TrendingUp className="w-3.5 h-3.5 text-[var(--success)]" />
+                    </div>
+                    <span className="text-[14px] text-[var(--text-primary)] font-medium">Rentabilidad</span>
+                  </div>
+                  <span className="text-[14px] font-['JetBrains_Mono'] text-[var(--success)] group-hover:scale-110 transition-transform cursor-default">+2.3%</span>
+                </div>
+                
+                <div className="flex justify-between items-center group/kpi">
+                  <div className="flex items-center gap-2">
+                    <div className="w-6 h-6 rounded bg-[var(--success-soft)] flex items-center justify-center">
+                      <TrendingUp className="w-3.5 h-3.5 text-[var(--success)]" />
+                    </div>
+                    <span className="text-[14px] text-[var(--text-primary)] font-medium">Cuota Mrc.</span>
+                  </div>
+                  <span className="text-[14px] font-['JetBrains_Mono'] text-[var(--success)] group-hover:scale-110 transition-transform cursor-default">+1.2%</span>
+                </div>
+                
+                <div className="h-px w-full bg-black/5 dark:bg-white/5" />
+                
+                <div className="flex justify-between items-end">
+                  <span className="text-[12px] text-[var(--text-tertiary)]">Posición Actual</span>
+                  <div className="flex items-center gap-1.5">
+                    <Trophy className="w-4 h-4 text-[var(--warning)]" />
+                    <span className="text-[18px] font-bold text-[var(--text-primary)]">#2</span>
+                    <span className="text-[12px] font-medium text-[var(--success)] ml-1">↑ 1</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </motion.div>
 
       {/* KPIs Grid */}
