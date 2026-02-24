@@ -12,9 +12,10 @@ import {
   Settings, 
   FileText,
   Trophy,
-  Clock,
   User,
-  LogOut
+  LogOut,
+  ShieldAlert,
+  Clock
 } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { CyclePill } from "./GlassComponents";
@@ -30,6 +31,7 @@ const navigation = [
   { name: "Módulo Operaciones", path: "/operations", icon: Settings },
   { name: "Análisis General", path: "/analysis", icon: FileText },
   { name: "Ranking", path: "/ranking", icon: Trophy },
+  { name: "[Docente] Admin", path: "/admin", icon: ShieldAlert },
 ];
 
 export function AppLayout({ children }: { children?: ReactNode }) {

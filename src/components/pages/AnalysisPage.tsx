@@ -352,6 +352,107 @@ export default function AnalysisPage() {
           </div>
         </div>
       </GlassCard>
+
+      {/* Static Balance / Income Statement Tables */}
+      <GlassCard className="p-8">
+        <div className="space-y-6">
+          <div className="flex justify-between items-end border-b border-[var(--glass-border)] pb-4">
+            <div>
+              <h2 className="text-[18px] font-medium text-[var(--text-primary)]">
+                Estados Financieros Consolidados (Balances Históricos)
+              </h2>
+              <p className="text-[12px] text-[var(--text-secondary)] mt-1">
+                Auditoría financiera del último ciclo cerrado (C3)
+              </p>
+            </div>
+            <button className="px-3 py-1.5 rounded-[var(--r-sm)] border border-[var(--glass-border)] bg-[var(--surface)] text-[12px] font-medium text-[var(--text-primary)] hover:bg-[var(--muted)] transition-colors">
+               Descargar Excel
+            </button>
+          </div>
+
+          <div className="grid grid-cols-2 gap-8">
+            {/* Estado de Resultados */}
+            <div className="space-y-3">
+              <h3 className="text-[14px] font-semibold text-[var(--text-primary)] bg-[var(--surface)] p-2 rounded-[var(--r-sm)] border border-[var(--glass-border)] text-center tracking-wider uppercase">Estado de Resultados (P&L)</h3>
+              <table className="w-full text-[12px]">
+                 <tbody className="divide-y divide-[var(--glass-border)]/50 text-[var(--text-secondary)]">
+                    <tr className="hover:bg-[var(--muted)]/50 transition-colors">
+                       <td className="py-2.5 px-2">Ventas Brutas</td>
+                       <td className="py-2.5 px-2 text-right font-['JetBrains_Mono']">$15,200,000</td>
+                    </tr>
+                    <tr className="hover:bg-[var(--muted)]/50 transition-colors">
+                       <td className="py-2.5 px-2 text-[var(--danger)]">C.O.G.S. (Costo Ventas)</td>
+                       <td className="py-2.5 px-2 text-right font-['JetBrains_Mono'] text-[var(--danger)]">($8,400,000)</td>
+                    </tr>
+                    <tr className="font-semibold text-[var(--text-primary)] bg-[var(--surface)] border-t border-[var(--glass-border)]">
+                       <td className="py-2.5 px-2">Utilidad Bruta</td>
+                       <td className="py-2.5 px-2 text-right font-['JetBrains_Mono']">$6,800,000</td>
+                    </tr>
+                    <tr className="hover:bg-[var(--muted)]/50 transition-colors">
+                       <td className="py-2.5 px-2 pl-6">↳ Gastos Administrativos</td>
+                       <td className="py-2.5 px-2 text-right font-['JetBrains_Mono']">($1,850,000)</td>
+                    </tr>
+                    <tr className="hover:bg-[var(--muted)]/50 transition-colors">
+                       <td className="py-2.5 px-2 pl-6">↳ Gastos Marketing</td>
+                       <td className="py-2.5 px-2 text-right font-['JetBrains_Mono']">($950,000)</td>
+                    </tr>
+                    <tr className="hover:bg-[var(--muted)]/50 transition-colors">
+                       <td className="py-2.5 px-2 pl-6">↳ Depreciación y Otros</td>
+                       <td className="py-2.5 px-2 text-right font-['JetBrains_Mono']">($400,000)</td>
+                    </tr>
+                    <tr className="font-bold text-[var(--accent)] bg-[var(--accent-soft)]/20 border-t-2 border-[var(--accent)]/30">
+                       <td className="py-3 px-2">EBITDA Operativo</td>
+                       <td className="py-3 px-2 text-right font-['JetBrains_Mono'] text-[14px]">$3,600,000</td>
+                    </tr>
+                 </tbody>
+              </table>
+            </div>
+
+            {/* Balance General Extracto */}
+            <div className="space-y-3">
+              <h3 className="text-[14px] font-semibold text-[var(--text-primary)] bg-[var(--surface)] p-2 rounded-[var(--r-sm)] border border-[var(--glass-border)] text-center tracking-wider uppercase">Balance General (Posición)</h3>
+              <table className="w-full text-[12px]">
+                 <tbody className="divide-y divide-[var(--glass-border)]/50 text-[var(--text-secondary)]">
+                    <tr className="bg-[var(--surface)]/50">
+                       <td className="py-2 px-2 font-medium text-[var(--text-primary)]">ACTIVOS</td>
+                       <td className="py-2 px-2 text-right"></td>
+                    </tr>
+                    <tr className="hover:bg-[var(--muted)]/50 transition-colors">
+                       <td className="py-2.5 px-2 pl-6">Caja y Bancos</td>
+                       <td className="py-2.5 px-2 text-right font-['JetBrains_Mono'] text-[var(--success)]">$3,250,000</td>
+                    </tr>
+                    <tr className="hover:bg-[var(--muted)]/50 transition-colors">
+                       <td className="py-2.5 px-2 pl-6">Inventarios</td>
+                       <td className="py-2.5 px-2 text-right font-['JetBrains_Mono']">$1,450,000</td>
+                    </tr>
+                    <tr className="hover:bg-[var(--muted)]/50 transition-colors">
+                       <td className="py-2.5 px-2 pl-6">Planta, Eq. e Intangibles</td>
+                       <td className="py-2.5 px-2 text-right font-['JetBrains_Mono']">$8,800,000</td>
+                    </tr>
+                    
+                    <tr className="bg-[var(--surface)]/50 mt-2 border-t border-[var(--glass-border)]">
+                       <td className="py-2 px-2 font-medium text-[var(--text-primary)] pt-4">PASIVOS Y PATRIMONIO</td>
+                       <td className="py-2 px-2 text-right"></td>
+                    </tr>
+                    <tr className="hover:bg-[var(--muted)]/50 transition-colors">
+                       <td className="py-2.5 px-2 pl-6">Deudas Corto Plazo</td>
+                       <td className="py-2.5 px-2 text-right font-['JetBrains_Mono'] text-[var(--danger)]">$850,000</td>
+                    </tr>
+                    <tr className="hover:bg-[var(--muted)]/50 transition-colors">
+                       <td className="py-2.5 px-2 pl-6">Deudas Largo Plazo</td>
+                       <td className="py-2.5 px-2 text-right font-['JetBrains_Mono'] text-[var(--danger)]">$4,200,000</td>
+                    </tr>
+                    <tr className="hover:bg-[var(--muted)]/50 transition-colors bg-[var(--muted)]/30">
+                       <td className="py-2.5 px-2 pl-6 font-medium text-[var(--text-primary)]">Total Patrimonio (Equity)</td>
+                       <td className="py-2.5 px-2 text-right font-['JetBrains_Mono'] font-medium text-[var(--text-primary)]">$8,450,000</td>
+                    </tr>
+                 </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </GlassCard>
     </div>
   );
 }

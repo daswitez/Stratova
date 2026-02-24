@@ -1,7 +1,5 @@
-"use client";
+import OperationsPage from "@/components/pages/OperationsPage";
 
-import WorkspacePage from "@/components/pages/WorkspacePage";
-
-export default function Page() {
-  return <WorkspacePage />;
+export default function OperationsRoute() {
+  return <OperationsPage />;
 }
